@@ -9,7 +9,7 @@ const app = express();
 // app.use(require('compression')({...}));
 // app.use(require('helmet')({...}));
 
-app.use(postgraphile(process.env.DATABASE || "postgres:///", {
+app.use(postgraphile(process.env.DATABASE_URL || "postgres:///", {
   appendPlugins: [ConnectionFilterPlugin],
   graphiql: true
 }));
